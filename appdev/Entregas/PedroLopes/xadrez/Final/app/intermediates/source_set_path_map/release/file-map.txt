@@ -1,0 +1,14 @@
+com.example.xadrez.app-jetified-window-java-1.0.0-beta04-0 /Users/pedro/.gradle/caches/transforms-3/006d93cd422dbc43e89591147c2de572/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.xadrez.app-core-1.6.0-1 /Users/pedro/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/res
+com.example.xadrez.app-jetified-annotation-experimental-1.1.0-2 /Users/pedro/.gradle/caches/transforms-3/8965c941cf4bee4d72541b965c7c9d39/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.xadrez.app-jetified-window-1.0.0-beta04-3 /Users/pedro/.gradle/caches/transforms-3/dee59bb480020f42d53c2ea15e4501f7/transformed/jetified-window-1.0.0-beta04/res
+com.example.xadrez.app-main-4 /Users/pedro/Documents/PedroLopes/xadrez/android/app/src/main/res
+com.example.xadrez.app-release-5 /Users/pedro/Documents/PedroLopes/xadrez/android/app/src/release/res
+com.example.xadrez.app-pngs-6 /Users/pedro/Documents/PedroLopes/xadrez/build/app/generated/res/pngs/release
+com.example.xadrez.app-resValues-7 /Users/pedro/Documents/PedroLopes/xadrez/build/app/generated/res/resValues/release
+com.example.xadrez.app-rs-8 /Users/pedro/Documents/PedroLopes/xadrez/build/app/generated/res/rs/release
+com.example.xadrez.app-mergeReleaseResources-9 /Users/pedro/Documents/PedroLopes/xadrez/build/app/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.example.xadrez.app-mergeReleaseResources-10 /Users/pedro/Documents/PedroLopes/xadrez/build/app/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.example.xadrez.app-merged_res-11 /Users/pedro/Documents/PedroLopes/xadrez/build/app/intermediates/merged_res/release
+com.example.xadrez.app-packaged_res-12 /Users/pedro/Documents/PedroLopes/xadrez/build/flutter_native_splash/intermediates/packaged_res/release
+com.example.xadrez.app-packaged_res-13 /Users/pedro/Documents/PedroLopes/xadrez/build/shared_preferences_android/intermediates/packaged_res/release
