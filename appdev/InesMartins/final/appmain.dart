@@ -1,5 +1,5 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
+import "dart:async";
+import "package:flutter/material.dart";
 
 //Inicialização da app
 void main() {
@@ -13,15 +13,15 @@ class App extends StatelessWidget {
     return MaterialApp(
 
       //Nome da app
-      title: 'To-Do NOW',
+      title: "To-Do NOW",
 
       //Criação de splashscreen
       home: SplashScreen(),
 
       //Criação de duas páginas: Lista de tarefas por fazer, e lista de tarefas já feitas
       routes: {
-        '/home': (context) => HomePage(),
-        '/completed': (context) => CompletedTasksPage(),
+        "/home": (context) => HomePage(),
+        "/completed": (context) => CompletedTasksPage(),
       },
     );
   }
@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 4), () {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, "/home");
     });
   }
 
@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Text(
-          'To-Do NOW',
+          "To-Do NOW",
           style: TextStyle(
             fontSize: 27.0,
             fontWeight: FontWeight.italic,
@@ -74,16 +74,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de tarefas:'),
+        title: Text("Lista de tarefas:"),
         actions: [
           IconButton(
             icon: Icon(Icons.done_all),
             onPressed: () {
-              Navigator.pushNamed(context, '/completed');
+              Navigator.pushNamed(context, "/completed");
             },
           ),
         ],
       ),
+
       //Funcionamento geral das tarefas: criação e eliminação
       body: Column(
         children: [
@@ -106,11 +107,12 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
+
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Add a task',
+                hintText: "Adicionar tarefa",
                 suffixIcon: IconButton(
                   icon: Icon(Icons.add),
                   onPressed: () {
@@ -126,11 +128,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
+    );}
 
-  final TextEditingController _textController = TextEditingController();
-}
+  final TextEditingController _textController = TextEditingController();}
 
 //Página de tarefas já realizadas
 class CompletedTasksPage extends StatelessWidget {
@@ -142,7 +142,7 @@ class CompletedTasksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tarefas Concluídas!'),
+        title: Text("Tarefas Concluídas!"),
       ),
       body: ListView.builder(
         itemCount: completedTasks.length,
