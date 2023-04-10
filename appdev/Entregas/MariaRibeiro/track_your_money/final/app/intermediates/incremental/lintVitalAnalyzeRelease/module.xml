@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/home/maria-ribeiro/maria-ribeiro/appdev/Entregas/MariaRibeiro/track_your_money/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.2.0"
+    buildFolder="/home/maria-ribeiro/maria-ribeiro/appdev/Entregas/MariaRibeiro/track_your_money/build/app"
+    bootClassPath="/home/maria-ribeiro/Android/Sdk/platforms/android-33/android.jar:/home/maria-ribeiro/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-33">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
