@@ -1,29 +1,39 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-
+//Inicialização da app
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+//Homepage
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'To-Do Now',
+
+      //Nome da app
+      title: 'To-Do NOW',
+
+      //Criação de splashscreen
       home: SplashScreen(),
+
+      //Criação de duas páginas: Lista de tarefas por fazer, e lista de tarefas já feitas
       routes: {
         '/home': (context) => HomePage(),
+        '/completed': (context) => CompletedTasksPage(),
       },
     );
   }
 }
 
+//Splashscreen
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
+//Duração do splashscreen e início do funcionamento da app
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
@@ -49,22 +59,32 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
+//Página Principal
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
+//Criação de duas listas diferentes
 class _HomePageState extends State<HomePage> {
-  List<String> _dailytasks = [];
+  List<String> _tasks = [];
+  List<String> _completedTasks = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('To-Do List'),
+        title: Text('Lista de tarefas:'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.done_all),
+            onPressed: () {
+              Navigator.pushNamed(context, '/completed');
+            },
+          ),
+        ],
       ),
-
-
+      //Funcionamento geral das tarefas: criação e eliminação
       body: Column(
         children: [
           Expanded(
@@ -74,10 +94,11 @@ class _HomePageState extends State<HomePage> {
                 return ListTile(
                   title: Text(_tasks[index]),
                   trailing: IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: Icon(Icons.check),
                     onPressed: () {
                       setState(() {
-                        _tasks.removeAt(index);
+                        String task = _tasks.removeAt(index);
+                        _completedTasks.add(task);
                       });
                     },
                   ),
@@ -109,4 +130,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   final TextEditingController _textController = TextEditingController();
+}
+
+//Página de tarefas já realizadas
+class CompletedTasksPage extends StatelessWidget {
+  final List<String> completedTasks;
+
+  CompletedTasksPage({Key? key, required this.completedTasks}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tarefas Concluídas!'),
+      ),
+      body: ListView.builder(
+        itemCount: completedTasks.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(completedTasks[index]),
+          );
+        },
+      ),
+    );
+  }
 }
