@@ -1,4 +1,0 @@
-#Mon Apr 10 19:23:43 WEST 2023
-base.0=/home/maria-ribeiro/maria-ribeiro/appdev/Entregas/MariaRibeiro/track_your_money/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
