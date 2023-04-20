@@ -1,5 +1,5 @@
-import "dart:async";
-import "package:flutter/material.dart";
+import 'dart:async';
+import 'package:flutter/material.dart';
 
 //Inicialização da app
 void main() {
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
       //Criação de duas páginas: Lista de tarefas por fazer, e lista de tarefas já feitas
       routes: {
         "/home": (context) => HomePage(),
-        "/completed": (context) => CompletedTasksPage(),
+        "/completed": (context) => CompletedTasksPage(completedTasks: []),
       },
     );
   }
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
           "To-Do NOW",
           style: TextStyle(
             fontSize: 27.0,
-            fontWeight: FontWeight.italic,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.done_all),
             onPressed: () {
-              Navigator.pushNamed(context, "/completed");
+              Navigator.pushNamed(context, "/completed", arguments: _completedTasks);
             },
           ),
         ],
@@ -128,9 +128,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );}
+    );
+  }
 
-  final TextEditingController _textController = TextEditingController();}
+  final TextEditingController _textController = TextEditingController();
+}
 
 //Página de tarefas já realizadas
 class CompletedTasksPage extends StatelessWidget {
